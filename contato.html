@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="menu">
+                <li><a href="index.html">Sobre Mim</a></li>
+                <li><a href="formacao.html">Formação</a></li>
+                <li><a href="portfolio.html">Portfólio</a></li>
+                <li><a href="contato.html" class="ativo">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="contato">
+            <h1>Contato</h1>
+            <form id="form-contato">
+                <div class="form-group">
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="mensagem">Mensagem:</label>
+                    <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
+                </div>
+                <button type="submit">Enviar</button>
+            </form>
+            <div id="mensagem-enviada" class="mensagem-enviada" style="display: none;">
+                <p>Mensagem enviada com sucesso!</p>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>© 2024 Rafaela Simon (RU: 4892335). Todos os direitos reservados.</p>
+    </footer>
+    <script>
+        document.getElementById('form-contato').addEventListener('submit', function(e) {
+            e.preventDefault(); // Impede o envio real do formulário
+            document.getElementById('mensagem-enviada').style.display = 'block'; // Mostra a mensagem de sucesso
+            this.reset(); // Limpa os campos do formulário
+        });
+    </script>
+</body>
+</html>
